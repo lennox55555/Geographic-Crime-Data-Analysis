@@ -1,54 +1,39 @@
-const express = require('express');
-const app = require('express')();
-const PORT = 8080;
+let apikey = '3029431a-2768-4e17-8d62-fd3f597b4632'
 
-app.use(express.json())
+function request(method, url) {
+    return new Promise(function (resolve, reject) {
+        let xhr = new XMLHttpRequest();
+        xhr.open(method, url);
+        xhr.onload = resolve;
+        xhr.onerror = reject;
+        xhr.send();
 
-app.listen (
-    PORT,
-    () => console.log(`its alive on http://localhost:${PORT}`)
-)
-
-app.get('/shirts', (req, res) => {
-    res.status(200).send({
-        tshirt: '-[]-',
-        size: 'large'
     })
-});
+}
 
-app.post('/shirts/:id', (req, res) => {
-
-    const  { id } = req.params;
-    const { logo } = req.body;
-
-    if (!logo) {
-        res.status(418).send({message: 'We need a logo!'})
-    }
-
-    res.send({
-        tshirt: `-[]- with your ${logo} and ID of ${id}`,
-
-    });
-
-});
+request('GET', 'https://pro-api.coinmarketcap.com/v1/global-metrics/quotes/latest?CMC_PRO_API_KEY=' + apikey)
+    .then((r1) => {
+        let x1 = JSON.parse(r1.target.responseText);
+        let uglyMarketCap = x1.data.quote.USD.total_market_cap;
+        numberWithCommas(uglyMarketCap)
+    }).catch()
 
 
-// const https = require('https');
-//
-// var options = {
-//     "method": "GET",
-//     "hostname": "rest.coinapi.io",
-//     "path": "/v1/exchanges",
-//     "headers": {'X-CoinAPI-Key': 'C706B5ED-1032-4544-8B88-E9042708F57D'}
-// };
-//
-// var request = https.request(options, function (response) {
-//     var chunks = [];
-//
-//     response.on("data", function (chunk) {
-//         chunks.push(chunk);
-//     });
-//
-// });
-//
-// request.end();
+// Formats number values into integers the further into csv.
+function numberWithCommas(x) {
+    let marketCap = Math.round(x).toFixed(0)
+    console.log(marketCap.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+    return marketCap.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+
+}
+
+document.getElementsByClassName('text').innerHTML="Welcome to Educative!";
+
+
+
+
+
+
+
+
+
