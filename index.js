@@ -27,7 +27,7 @@ function numberWithCommas(x) {
 
 }
 
-document.getElementsByClassName('text').innerHTML="Welcome to Educative!";
+document.getElementsByClassName('text').innerHTML="";
 
 
 
