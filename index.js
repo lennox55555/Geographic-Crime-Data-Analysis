@@ -1,4 +1,6 @@
+
 let apikey = '3029431a-2768-4e17-8d62-fd3f597b4632'
+
 
 function request(method, url) {
     return new Promise(function (resolve, reject) {
@@ -13,21 +15,33 @@ function request(method, url) {
 
 request('GET', 'https://pro-api.coinmarketcap.com/v1/global-metrics/quotes/latest?CMC_PRO_API_KEY=' + apikey)
     .then((r1) => {
+
+        //Parses JSON data
         let x1 = JSON.parse(r1.target.responseText);
+
+        //Targets specific market cap
         let uglyMarketCap = x1.data.quote.USD.total_market_cap;
-        numberWithCommas(uglyMarketCap)
+
+        // call the prettifyNumbers function
+        prettifyNumbers(uglyMarketCap)
+
+        //Updates the DOM with the prettified data
+        document.getElementById('marketCap').innerText=`${prettifyNumbers(uglyMarketCap)}`
     }).catch()
 
 
-// Formats number values into integers the further into csv.
-function numberWithCommas(x) {
-    let marketCap = Math.round(x).toFixed(0)
-    console.log(marketCap.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
-    return marketCap.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 
+
+// Formats number values into integers the further into csv.
+function prettifyNumbers(x) {
+
+    //Eliminates decimals
+    let marketCap = Math.round(x).toFixed(0)
+
+    //document.getElementById('marketCap').innerText=`${marketCap.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`
+    return marketCap.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
 
-document.getElementsByClassName('text').innerHTML="";
 
 
 
