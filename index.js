@@ -1,7 +1,6 @@
 
 let apikey = '3029431a-2768-4e17-8d62-fd3f597b4632'
 
-
 function request(method, url) {
     return new Promise(function (resolve, reject) {
         let xhr = new XMLHttpRequest();
@@ -27,10 +26,8 @@ request('GET', 'https://pro-api.coinmarketcap.com/v1/global-metrics/quotes/lates
 
         //Updates the DOM with the prettified data
         document.getElementById('marketCap').innerText=`${prettifyNumbers(uglyMarketCap)}`
+
     }).catch()
-
-
-
 
 // Formats number values into integers the further into csv.
 function prettifyNumbers(x) {
@@ -42,6 +39,20 @@ function prettifyNumbers(x) {
     return marketCap.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
 
+
+
+request('GET', 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=' + apikey)
+    .then((r2) => {
+
+        //Parses JSON data
+        x2 = JSON.parse(r2.target.responseText);
+
+        let test = x2.data;
+
+        console.log(test)
+
+
+    }).catch()
 
 
 
