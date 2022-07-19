@@ -1,3 +1,12 @@
+let ws = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@aggTrade')
+
+ws.onmessage = (event) => {
+    let stockObject = JSON.parse(event.data);
+
+    document.getElementById('coinPrice').innerText=`${prettifyNumbers(stockObject.p)}`;
+}
+
+
 
 let apikey = '3029431a-2768-4e17-8d62-fd3f597b4632'
 
@@ -33,32 +42,9 @@ request('GET', 'https://pro-api.coinmarketcap.com/v1/global-metrics/quotes/lates
 function prettifyNumbers(x) {
 
     //Eliminates decimals
-    let marketCap = Math.round(x).toFixed(0)
+    let biDecimal = Math.round(x * 100) / 100
 
     //document.getElementById('marketCap').innerText=`${marketCap.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`
-    return marketCap.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    return biDecimal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
-
-
-
-request('GET', 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=' + apikey)
-    .then((r2) => {
-
-        //Parses JSON data
-        x2 = JSON.parse(r2.target.responseText);
-
-        let test = x2.data;
-
-        console.log(test)
-
-
-    }).catch()
-
-
-
-
-
-
-
-
 
