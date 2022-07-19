@@ -2,6 +2,26 @@ body {
     background-color: white;
 }
 
+#aboutCardano {
+    background-color: mediumpurple;
+    margin-left: 35%;
+    bottom: 90%;
+    width: 8rem;
+    height: 1.75rem;
+}
+
+#aboutCardano:hover {
+    background-color: #473269;
+    margin: auto;
+    bottom: 90%;
+    width: 8rem;
+    height: 1.75rem;
+}
+
+#coinPrice {
+
+}
+
 #marketCap {
     margin-bottom: 0 ;
     padding-left: 5px;
@@ -37,7 +57,7 @@ body {
     background-color: mediumpurple;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    width: 40%;
+    width: 400px;
     height: 50px;
     margin-top: -32px;
     color: white;
@@ -55,13 +75,13 @@ body {
     background-color: white;
     box-shadow: black 20px 30px 55px;
     border-radius: 20px;
-    width: 30%;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     margin: auto;
 
 }body {
-    background-color: white;
-}
+     background-color: white;
+ }
 
 #marketCap {
     margin-bottom: 0 ;
@@ -105,7 +125,7 @@ body {
 
 }
 
-#coinHeading1 {
+.coinHeading {
     padding-top: 10px;
     text-align: center;
     font-family: 'Itim', cursive;
@@ -116,8 +136,29 @@ body {
     background-color: white;
     box-shadow: black 20px 30px 55px;
     border-radius: 20px;
-    width: 30%;
+    width: 400px;
     height: 300px;
     margin: auto;
+    animation: leftSlide 1s ease forwards;
+    position: absolute;
+    right: -500px;
 
 }
+
+
+
+@keyframes leftSlide {
+
+    0% {
+
+
+
+    }
+
+
+    100% {
+        transform: translateX(-700px);
+
+    }
+}
+
