@@ -2,24 +2,43 @@ body {
     background-color: white;
 }
 
+#aboutBitcoin {
+    background-color: #5952e3;
+    margin-left: 35%;
+    bottom: 90%;
+    width: 8rem;
+    height: 1.75rem;
+    color: white;
+    font-family: 'Itim', cursive;
+
+}
+
+
+
 #aboutCardano {
     background-color: mediumpurple;
     margin-left: 35%;
     bottom: 90%;
     width: 8rem;
     height: 1.75rem;
+    color: white;
+    font-family: 'Itim', cursive;
+
 }
 
-#aboutCardano:hover {
-    background-color: #473269;
-    margin: auto;
-    bottom: 90%;
-    width: 8rem;
-    height: 1.75rem;
+
+
+#coinPriceADA {
+    font-family: 'Itim', cursive;
 }
 
-#coinPrice {
+#coinPriceBTC {
+    font-family: 'Itim', cursive;
+}
 
+.coinText {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #marketCap {
@@ -71,15 +90,8 @@ body {
     font-size: 2rem;
 }
 
-.coinBody {
-    background-color: white;
-    box-shadow: black 20px 30px 55px;
-    border-radius: 20px;
-    width: 400px;
-    height: 400px;
-    margin: auto;
 
-}body {
+body {
      background-color: white;
  }
 
@@ -114,8 +126,19 @@ body {
 
 
 
-.coinHeader {
+.coinHeaderADA {
     background-color: mediumpurple;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 40%;
+    height: 50px;
+    margin-top: -32px;
+    color: white;
+
+}
+
+.coinHeaderBTC {
+    background-color: #5952e3;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
     width: 40%;
@@ -132,7 +155,7 @@ body {
     font-size: 2rem;
 }
 
-.coinBody {
+.coinBody1 {
     background-color: white;
     box-shadow: black 20px 30px 55px;
     border-radius: 20px;
@@ -142,22 +165,35 @@ body {
     animation: leftSlide 1s ease forwards;
     position: absolute;
     right: -500px;
+    top: 50px;
 
 }
 
+.coinBody2 {
+    background-color: white;
+    box-shadow: black 20px 30px 55px;
+    border-radius: 20px;
+    width: 400px;
+    height: 300px;
+    margin: auto;
+    animation: leftSlide 1s ease forwards;
+    position: absolute;
+    right: -500px;
+    bottom: 50px;
+
+}
 
 
 @keyframes leftSlide {
 
     0% {
-
-
-
+        opacity: .001;
     }
 
 
     100% {
         transform: translateX(-700px);
+        opacity: 1;
 
     }
 }
