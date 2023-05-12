@@ -1,4 +1,4 @@
-![Crime Analysis]()
+![Crime Analysis](AltairMap.png)
 
 # Crime Analysis on Atlanta
 
