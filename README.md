@@ -1,4 +1,8 @@
 ![Crime Analysis](AltairMap.png)
+![Crime Analysis](Heatmap.png)
+![Crime Analysis](Setting.png)
+![Crime Analysis](Dangerous.png)
+
 
 # Crime Analysis on Atlanta
 
