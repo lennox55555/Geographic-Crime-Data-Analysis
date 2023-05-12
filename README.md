@@ -1,3 +1,5 @@
+![Crime Analysis]()
+
 # Crime Analysis on Atlanta
 
 This project performs data analysis on crime in Atlanta using the Atlanta Police Department's API and a 2021 CSV dataset. The project utilizes various libraries such as matplotlib, pandas, Altair, Vega datasets, NumPy, requests, BeautifulSoup, and more.
