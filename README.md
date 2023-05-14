@@ -8,13 +8,6 @@
 
 This project performs data analysis on crime in Atlanta using the Atlanta Police Department's API and a 2021 CSV dataset. The project utilizes various libraries such as matplotlib, pandas, Altair, Vega datasets, NumPy, requests, BeautifulSoup, and more.
 
-## Prerequisites
-
-Before running this project, ensure that you have the following:
-
-- Python 3.x installed on your system
-- Required libraries: matplotlib, pandas, Altair, Vega datasets, NumPy, requests, BeautifulSoup
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE). Feel free to modify and distribute it as per the terms of the license.
